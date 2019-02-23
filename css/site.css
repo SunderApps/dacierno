@@ -1,0 +1,30 @@
+﻿body {
+    height: 100vh;
+    background-image: url('../images/DAciernoOrange-min.jpg');
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    filter: hue-rotate(300deg);
+}
+
+footer {
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+}
+
+#visualizer_halo {
+    position: fixed;
+    /*right: 0px;*/ 
+    /*bottom: 0px;*/
+    top: 120px;
+    left: 0px;
+    /*width: 100%;
+    height: 100%;*/
+}
+
+#visualizer_lines {
+    margin-top: 403px;
+    margin-left: 100px;
+}
