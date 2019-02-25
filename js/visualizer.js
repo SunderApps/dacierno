@@ -171,7 +171,7 @@
 
         // Initialize Audio Analysis
         dacierno.vis.context = new AudioContext();
-        dacierno.vis.source = dacierno.vis.context.createMediaElementSource(audio);
+        dacierno.vis.source = dacierno.vis.context.createMediaElementSource($under.audio.element);
         dacierno.vis.analyser = dacierno.vis.context.createAnalyser();
         dacierno.vis.source.connect(dacierno.vis.analyser);
         dacierno.vis.source.connect(dacierno.vis.context.destination);
