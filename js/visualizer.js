@@ -93,12 +93,12 @@
 
     lines: {
         options: {
-            numLines: 9,          // Number of lines
+            numLines: 9,           // Number of lines
             width: 1000,           // Width of canvas
             height: 500,           // Height of canvas
             base: 0,               // Constant added to line angles
             strength: 1,           // Multiplier for line angles
-            canvs: {},             // The canvas to draw on
+            canvas: {},            // The canvas to draw on
             context: {},           // The context to draw with
         },
         renderFrame: function (timestamp) {
@@ -154,7 +154,7 @@
 
     renderFrame: function (timestamp) {
         // If the audio is paused, pause the animation
-        if ($under.audio.element.paused) { return; }
+        if ($under.player.element.paused) { return; }
 
         // Get the next frame
         requestAnimationFrame(dacierno.vis.renderFrame);
@@ -167,11 +167,11 @@
 
     init: function () {
         // Load default audio
-        $under.audio.load('../mp3/cato/petrichor.mp3', 'Petrichor');
+        $under.player.load('../mp3/cato/petrichor.mp3', 'Petrichor');
 
         // Initialize Audio Analysis
         dacierno.vis.context = new AudioContext();
-        dacierno.vis.source = dacierno.vis.context.createMediaElementSource($under.audio.element);
+        dacierno.vis.source = dacierno.vis.context.createMediaElementSource($under.player.element);
         dacierno.vis.analyser = dacierno.vis.context.createAnalyser();
         dacierno.vis.source.connect(dacierno.vis.analyser);
         dacierno.vis.source.connect(dacierno.vis.context.destination);
@@ -182,7 +182,7 @@
         dacierno.vis.lines.init();
 
         // Run visualizer on play
-        $under.audio.element.onplay = dacierno.vis.renderFrame;
+        $under.player.element.onplay = dacierno.vis.renderFrame;
     }
  };
 
