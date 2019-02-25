@@ -7,4 +7,4 @@ var dacierno = dacierno || {
     }
 };
 
-$under(dacierno.init);
+$(dacierno.init);
