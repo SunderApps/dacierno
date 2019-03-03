@@ -1,5 +1,8 @@
 // out: ../css/dacierno.min.css, compress: true, sourceMap: false
 
+@trans-light: rgba(0, 0, 0, 0.3);
+@trans-dark: rgba(0, 0, 0, 0.8);
+@white: #DDD;
 @darkgray: #222;
 
 @orange: #f65b0b;
@@ -97,6 +100,44 @@ nav {
             &::-ms-thumb {
                 .thumb();
             }
+        }
+    }
+}
+
+.playlist {
+    margin-left: auto;
+    border-radius: 10px;
+    border-collapse: collapse;
+    color: @white;
+    background-color: @trans-dark;
+
+    .offset() {
+        background-color: @trans-light;
+    }
+
+    thead {
+        .offset();
+    }
+
+    tr {
+        th, td {
+            padding: 5px 10px;
+    
+            &:first-child {
+                padding-left: 20px;
+            }
+    
+            &:last-child {
+                padding-right: 20px;
+            }
+    
+            &:nth-child(2n) {
+                .offset();
+            }
+        }   
+        
+        &:hover, &:active, &:focus {
+            filter: brightness(0.8);
         }
     }
 }
