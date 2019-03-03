@@ -19,12 +19,13 @@ var dacierno = dacierno || {
                     dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
                     dacierno.background.actives[index] = src;
                     $('body').append(dacierno.background.elements[index]);
+                    console.log('go');
                     dacierno.background.elements[index].css({
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
-                    }).addClass('show');
-                    console.log('show');
-                    setTimeout(function () {
+                    }).animate({
+                        opacity: 1
+                    }, 500, function () {
                         console.log('done');
                         $('body').css({
                             backgroundImage: 'url(' + src + ')',
@@ -33,7 +34,7 @@ var dacierno = dacierno || {
                         dacierno.background.elements[index].remove();
                         dacierno.background.elements[index] = null;
                         dacierno.background.actives[index] = null;
-                    }, 500);
+                    });
                 }
             }
         },
