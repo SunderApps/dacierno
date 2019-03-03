@@ -13,9 +13,10 @@ var dacierno = dacierno || {
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || dacierno.background.default,
                     pos = $img.data('position') || '0% 100%';
-                    console.log($('body').css('backgroundImage'));
-                if ($('.body-temp').css('backgroundImage') !== 'url(' + src + ')') {
-                    $('.body-temp').css({
+                if ($('body').css('backgroundImage') !== 'url(' + src + ')') {
+                    var $back = $('<div></div>').addClass('background');    
+                    $('body').append($back);
+                    $back.css({
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
                     }).addClass('show');
@@ -24,14 +25,14 @@ var dacierno = dacierno || {
                             backgroundImage: 'url(' + src + ')',
                             backgroundPosition: pos
                         });
-                        $('.body-temp').removeClass('show');
+                        $back.remove();
                     }, 500);
                 }
             }
         },
         
         init: function () {
-            $('body').append($('<div></div>').addClass('body-temp'));
+
         }
     },
 
