@@ -32,6 +32,7 @@ var dacierno = dacierno || {
         $under.history.title = 'D\'Acierno';
         $under.progress.color = '#f65b0b';
         dacierno.events();
+        dacierno.background.init();
     }
 };
 
