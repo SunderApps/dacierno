@@ -15,11 +15,17 @@ var dacierno = dacierno || {
                     pos = $img.data('position') || '0% 100%';
                     console.log($('body').css('backgroundImage'));
                 if ($('.body-temp').css('backgroundImage') !== 'url(' + src + ')') {
-                    $('.body-temp').css('backgroundImage', 'url(' + src + ')').addClass('show');
+                    $('.body-temp').css({
+                        backgroundImage: 'url(' + src + ')',
+                        backgroundPosition: pos
+                    }).addClass('show');
                     delay(function () {
-                        $('body').css('backgroundImage', 'url(' + src + ')');
+                        $('body').css({
+                            backgroundImage: 'url(' + src + ')',
+                            backgroundPosition: pos
+                        });
                         $('.body-temp').removeClass('show');
-                    }, 300);
+                    }, 500);
                 }
             }
         },
