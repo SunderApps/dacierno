@@ -9,7 +9,7 @@ var dacierno = dacierno || {
         if ($container) {
             var index = Math.floor($container.scrollTop() / ($(window).height() * 0.5));
             console.log(index);
-            var src = $container.children()[index].find('img').attr('src');
+            var src = $($container.children()[index]).find('img').attr('src');
             $('body').css('backgroundImage', 'url(' + src + ')');
         }
     },
