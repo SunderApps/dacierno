@@ -7,7 +7,7 @@ var dacierno = dacierno || {
     background: function () {
         var $container = $('.container.open:not(.hide)');
         if ($container) {
-            var index = Math.floor(Math.max($container.scrollTop() - ($(window).height() / 3), 0) / $(window).height());
+            var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height());
             var src = $($($container.children()[0]).children()[index]).find('img').attr('src');
             $('body').css('backgroundImage', 'url(' + src + ')');
             console.log(index);
