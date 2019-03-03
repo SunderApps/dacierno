@@ -18,7 +18,7 @@ var dacierno = dacierno || {
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~dacierno.background.actives.indexOf(src)) {
                     dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
                     dacierno.background.actives[index] = src;
-                    $('body').append($back);
+                    $('body').append(dacierno.background.elements[index]);
                     dacierno.background.elements[index].css({
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
