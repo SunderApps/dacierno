@@ -7,9 +7,9 @@ var dacierno = dacierno || {
     background: function () {
         var $container = $('.container.open:not(.hide)');
         if ($container) {
-            var index = Math.floor($container.scrollTop() / $(window).height());
+            var index = Math.floor($container.scrollTop() / ($(window).height() * 0.5));
             console.log(index);
-            var src = $container.children(':nth-child(' + index + ') .art img').attr('src');
+            var src = $container.children()[index].find('img').attr('src');
             $('body').css('backgroundImage', 'url(' + src + ')');
         }
     },
