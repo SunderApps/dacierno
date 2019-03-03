@@ -9,13 +9,18 @@ var dacierno = dacierno || {
         update: function () {
             var $container = $('.container.open:not(.hide)');
             if ($container) {
-                var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height());
-                var src = $($($container.children()[0]).children()[index]).find('img').attr('src');
-                $('.body-temp').css('backgroundImage', 'url(' + (src || dacierno.background.default) + ')').addClass('show');
-                delay(function () {
-                    $('body').css('backgroundImage', 'url(' + (src || dacierno.background.default) + ')');
-                    $('.body-temp').removeClass('show');
-                }, 300);
+                var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
+                    $img = $($($container.children()[0]).children()[index]).find('img'),
+                    src = $img.data('background') || $img.attr('src') || dacierno.background.default,
+                    pos = $img.data('position') || '0% 100%';
+                    console.log($('body').css('backgroundImage'));
+                if ($('.body-temp').css('backgroundImage') !== 'url(' + src + ')') {
+                    $('.body-temp').css('backgroundImage', 'url(' + src + ')').addClass('show');
+                    delay(function () {
+                        $('body').css('backgroundImage', 'url(' + src + ')');
+                        $('.body-temp').removeClass('show');
+                    }, 300);
+                }
             }
         },
         
