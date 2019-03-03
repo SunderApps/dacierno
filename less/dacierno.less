@@ -172,3 +172,22 @@ nav {
         }
     }
 }
+
+.body-temp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: 300ms;
+
+    &.show {
+        opacity: 1;
+    }
+}
