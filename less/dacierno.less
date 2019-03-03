@@ -82,4 +82,21 @@ nav {
             }
         }
     }
+
+    .player {
+        .thumb() {
+            background: @orange;
+        }
+        input[type=range] {
+            &::-webkit-slider-thumb {
+                .thumb();
+            }
+            &::-moz-range-thumb {
+                .thumb();
+            }
+            &::-ms-thumb {
+                .thumb();
+            }
+        }
+    }
 }

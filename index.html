@@ -81,6 +81,8 @@
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" type="text/css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
     <link type="text/css" rel="stylesheet" href="https://sunderapps.com/css/sunder.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://sunderapps.com/css/sidebar.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://sunderapps.com/css/player.min.css" />
     <link type="text/css" rel="stylesheet" href="/css/dacierno.min.css" />
 </head>
 <body>
@@ -124,18 +126,58 @@
                 </ul>  
             </div>
             <div class="player">
-                <div class="play">
-                    <i class="fas fa-play"></i>
-                    <input type="range" class="scrubber" value="0" />
+                <div class="video">
+                    <video src="https://www.dacierno.com/mp3/cato/audio-medic.mp3"></video>
                 </div>
-                <div class="volume">
-                    <i class="fas fa-volume-up"></i>
-                    <input type="range" class="volume" min="0" max="1" step="0.1" value="1" />
+                <div class="title">
+                    <p>D'Acierno - Audio Medic</p>
                 </div>
-                <div class="full-screen">
-                    <i class="fas fa-expand"></i>
+                <div class="controls">
+                    <div class="play">
+                        <i class="fas fa-play"></i>
+                        <input type="range" value="0" />
+                    </div>
+                    <div class="volume">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" min="0" max="1" step="0.1" value="1" />
+                    </div>
+                    <div class="menu">
+                        <span></span>
+                    </div>
+                    <div class="overlay"></div>
                 </div>
-            </div>      
+                <div class="options">
+                    <div class="icons">
+                        <i class="fas fa-expand"></i>
+                        <i class="fas fa-volume-mute vol"></i>
+                    </div>
+                    <div class="inputs">
+                        <div class="select quality">
+                            <ul></ul>
+                            <ul>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-mobile"></i>
+                                        Low
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-tablet"></i>
+                                        Med
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-desktop"></i>
+                                        High        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
     <div class="progress"></div>
