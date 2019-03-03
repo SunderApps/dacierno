@@ -1,16 +1,22 @@
 var dacierno = dacierno || {
 
+    open: function () {
+        $('.container.open:not(.hide)').off('scroll').on('scroll', dacierno.background).scroll();
+    },
+
     background: function () {
         var $container = $('.container.open:not(.hide)');
         if ($container) {
-            var index = $container.scrollTop() / $container.height() * $container.children().length;
+            var index = Math.floor($container.scrollTop() / $(window).height());
             console.log(index);
+            var src = $container.children(':nth-child(' + index + ') .art img').attr('src');
+            $('body').css('backgroundImage', 'url(' + src + ')');
         }
     },
 
     events: function () {
-        $under.$erver.on('$-open-page', dacierno.background);
-        $('.container').on('scroll', dacierno.background);
+        $under.$erver.on('$-open-page', dacierno.open);
+        
     },
 
     init: function () {

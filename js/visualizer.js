@@ -148,7 +148,9 @@
 
         init: function () {
             dacierno.vis.lines.options.canvas = document.getElementById('visualizer_lines');
-            dacierno.vis.lines.options.context = dacierno.vis.lines.options.canvas.getContext('2d');        
+            if (dacierno.vis.lines.options.canvas) {
+                dacierno.vis.lines.options.context = dacierno.vis.lines.options.canvas.getContext('2d');
+            }
         }
     },
 
