@@ -20,7 +20,9 @@ var dacierno = dacierno || {
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
                     }).addClass('show');
+                    console.log('show');
                     delay(function () {
+                        console.log('done');
                         $('body').css({
                             backgroundImage: 'url(' + src + ')',
                             backgroundPosition: pos
