@@ -19,14 +19,12 @@ var dacierno = dacierno || {
                     dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
                     dacierno.background.actives[index] = src;
                     $('body').append(dacierno.background.elements[index]);
-                    console.log('go');
                     dacierno.background.elements[index].css({
                         backgroundImage: 'url(' + src + ')',
                         backgroundPosition: pos
                     }).animate({
                         opacity: 1
                     }, 500, function () {
-                        console.log('done');
                         $('body').css({
                             backgroundImage: 'url(' + src + ')',
                             backgroundPosition: pos
