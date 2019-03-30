@@ -1,5 +1,18 @@
 var dacierno = dacierno || {
 
+    player: {
+        play: function () {
+            var $this = $(this),
+                $parent = $this.parent(),
+                src = $parent.data('src'),
+                title = $parent.children()[1].innerHTML;
+                console.log(src);
+                console.log(title);
+            $under.player.load(src, title);
+            $under.player.play();
+        }
+    },
+
     openPage: function () {
         $('.container.open:not(.hide)').off('scroll').on('scroll', dacierno.background.update).scroll();
     },
