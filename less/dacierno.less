@@ -37,6 +37,7 @@ footer {
 
 a {
     color: @white;
+    transition: color 300ms;
 
     &:hover, &:active, &:focus {
         color: @orange;
@@ -82,14 +83,37 @@ nav {
 
     &:hover, &:active, &:focus, &.show {
         .head {
+            
+
             .toggle {
                 span {
+                    border-top-right-radius: unset;
+                    border-bottom-left-radius: unset;
+                    transform: rotate(90deg);
                     
                     &::before {
-
+                        left: 7px;
+                        top: -17px;
+                        background-color: rgba(0, 0, 0, 0);
+                        border-bottom: solid 3px @white;
+                        border-right: solid 3px @white;
+                        border-bottom-right-radius: 50% 100%;
+                        border-bottom-left-radius: unset;
+                        border-top-right-radius: unset;
+                        border-top-left-radius: unset;
+                        transform: rotate(-90deg);
                     }
                     &::after {
-                        height: 0;
+                        left: -6px;
+                        bottom: 7px;
+                        background-color: rgba(0, 0, 0, 0);
+                        border-bottom: solid 3px @white;
+                        border-left: solid 3px white;
+                        border-bottom-right-radius: unset;
+                        border-bottom-left-radius: 50% 100%;
+                        border-top-right-radius: unset;
+                        border-top-left-radius: unset;
+                        transform: rotate(90deg);
                     }
                 }
             }
