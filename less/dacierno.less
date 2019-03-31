@@ -209,6 +209,10 @@ nav {
                     width: 300px;
                     text-align: left;
                 }
+
+                &:nth-child(1), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+                    display: none;
+                }
             }   
             
             &:hover, &:active, &:focus {
@@ -271,12 +275,32 @@ nav {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-
+    .album {
+        .playlist {
+            tr {
+                th, td {
+                    &:nth-child(4), &:nth-child(5) {
+                        display: table;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {  
-
+    .album {
+        .playlist {
+            tr {
+                th, td {
+                    &:nth-child(1), &:nth-child(3) {
+                        display: table;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)
