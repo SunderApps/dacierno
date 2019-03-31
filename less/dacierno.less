@@ -280,6 +280,7 @@ nav {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {  
     .album {
+        max-width: 768px;
         .playlist {
             tr {
                 th, td {
@@ -303,6 +304,7 @@ nav {
         @height: 500px;
         flex-direction: row;
         height: ~"calc(100vh - 20px)";
+        max-width: unset;
 
         .art {
             width: @height;
