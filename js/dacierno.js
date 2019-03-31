@@ -2,12 +2,14 @@ var dacierno = dacierno || {
 
     player: {
         play: function () {
-            var $this = $(this),
-                $parent = $this.parent().parent(),
-                src = $parent.data('src'),
-                title = $parent.children()[1].innerHTML;
-                console.log(src);
-                console.log(title);
+            var $this = $(this);
+            console.log($this);
+            var $parent = $this.parent().parent();
+            console.log($parent);
+            var src = $parent.data('src');
+            console.log(src);
+            var title = $parent.children()[1].innerHTML;
+            console.log(title);
             $under.player.load(src, title);
             $under.player.play();
         }
