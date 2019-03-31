@@ -6,8 +6,13 @@ var dacierno = dacierno || {
             var $parent = $this.parent().parent();
             var src = $parent.data('src');
             var title = $parent.children()[1].innerHTML;
-            $under.player.load(src, title);
-            $under.player.play();
+            if ($this.hasClass('fa-play')) {
+                $under.player.load(src, title);
+                $under.player.play();
+            } else {
+                $under.player.pause();
+            }
+            $this.toggleClass('fa-play').toggleClass('fa-pause');
         }
     },
 
