@@ -19,9 +19,18 @@ var dacierno = dacierno || {
 
         next: function () {
             var src = $under.player.element.src.replace(/.*?[.]com/, '');
-            var $this = $('tr[data-src="' + src + '"]');
-            console.log(src);
-            console.log($this);
+            if (src) {
+                var $this = $('tr[data-src="' + src + '"]');
+                if ($this) {
+                    var $next = $this.next();
+                    if ($next) {
+                        var $play = $next.find('.fa-play');
+                        if ($play) {
+                            $play.click();
+                        }
+                    }
+                }
+            }
         },
 
         events: function () {
