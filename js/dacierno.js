@@ -1,16 +1,11 @@
 var dacierno = dacierno || {
 
     player: {
-        play: function (e) {
-            console.log(e);
+        play: function (this) {
             var $this = $(this);
-            console.log($this);
             var $parent = $this.parent().parent();
-            console.log($parent);
             var src = $parent.data('src');
-            console.log(src);
             var title = $parent.children()[1].innerHTML;
-            console.log(title);
             $under.player.load(src, title);
             $under.player.play();
         }
