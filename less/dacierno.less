@@ -150,24 +150,20 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: ~"calc(100vh - 20px)";
-    min-height: @height + 200px;
+    min-height: 100vh;
 
     .art {
-        width: @height;
-        height: @height;
+        width: 100%;
+        height: ~"calc(100vw - 60px)";
 
         img {
             width: 100%;
             height: 100%;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
         }
     }
     .playlist {
         height: @height;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+        width: 100%;
         border-collapse: collapse;
         color: @white;
         background-color: @trans-dark;
@@ -179,13 +175,6 @@ nav {
     
         thead {
             .offset();
-            border-top-right-radius: 10px;
-        }
-
-        tbody {
-            tr:last-child {
-                border-bottom-right-radius: 10px;
-            }
         }
     
         tr {
@@ -280,7 +269,7 @@ nav {
             tr {
                 th, td {
                     &:nth-child(4), &:nth-child(5) {
-                        display: table;
+                        display: table-cell;
                     }
                 }
             }
@@ -295,7 +284,7 @@ nav {
             tr {
                 th, td {
                     &:nth-child(1), &:nth-child(3) {
-                        display: table;
+                        display: table-cell;
                     }
                 }
             }
@@ -311,6 +300,34 @@ nav {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {  
     .album {
+        @height: 500px;
         flex-direction: row;
+        height: ~"calc(100vh - 20px)";
+
+        .art {
+            width: @height;
+            height: @height;
+
+            img {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+        }
+
+        .playlist {
+            width: unset;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            thead {
+                border-top-right-radius: 10px;
+            }
+
+            tbody {
+                tr:last-child {
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
     }
 }
