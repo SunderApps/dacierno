@@ -3,7 +3,7 @@ var dacierno = dacierno || {
     player: {
         play: function () {
             var $this = $(this),
-                $parent = $this.parent(),
+                $parent = $this.parent().parent(),
                 src = $parent.data('src'),
                 title = $parent.children()[1].innerHTML;
                 console.log(src);
