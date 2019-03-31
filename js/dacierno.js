@@ -7,12 +7,14 @@ var dacierno = dacierno || {
             var src = $parent.data('src');
             var title = $parent.children()[1].innerHTML;
             if ($this.hasClass('fa-play')) {
+                $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
                 $under.player.load(src, title);
                 $under.player.play();
+                $this.toggleClass('fa-play').toggleClass('fa-pause');
             } else {
                 $under.player.pause();
+                $this.toggleClass('fa-play').toggleClass('fa-pause');
             }
-            $this.toggleClass('fa-play').toggleClass('fa-pause');
         },
 
         next: function () {
