@@ -1,8 +1,8 @@
 var dacierno = dacierno || {
 
     player: {
-        play: function (this) {
-            var $this = $(this);
+        play: function (e) {
+            var $this = $(e);
             var $parent = $this.parent().parent();
             var src = $parent.data('src');
             var title = $parent.children()[1].innerHTML;
