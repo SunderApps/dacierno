@@ -18,7 +18,7 @@ var dacierno = dacierno || {
         },
 
         next: function () {
-            var src = $under.player.element.src.replace(/.*?mp3/, '');
+            var src = $under.player.element.src.replace(/.*?[.]com/, '');
             var $this = $('tr[data-src="' + src + '"]');
             console.log(src);
             console.log($this);
