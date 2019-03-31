@@ -13,6 +13,19 @@ var dacierno = dacierno || {
                 $under.player.pause();
             }
             $this.toggleClass('fa-play').toggleClass('fa-pause');
+        },
+
+        next: function () {
+            var $this = $('[data-src=' + $under.player.element.src + ']');
+            console.log($this);
+        },
+
+        events: function () {
+            $($under.player.element).on('ended', dacierno.player.next);
+        },
+
+        init: function () {
+            dacierno.player.events();
         }
     },
 
