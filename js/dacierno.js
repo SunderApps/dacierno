@@ -80,6 +80,7 @@ var dacierno = dacierno || {
         $under.progress.color = '#f65b0b';
         dacierno.events();
         dacierno.background.init();
+        dacierno.player.init();
     }
 };
 
