@@ -162,7 +162,6 @@ nav {
         }
     }
     .playlist {
-        height: @height;
         width: 100%;
         border-collapse: collapse;
         color: @white;
@@ -281,6 +280,9 @@ nav {
 @media (min-width: 768px) {  
     .album {
         max-width: 768px;
+        .art {
+            max-height: 768px;
+        }
         .playlist {
             tr {
                 th, td {
@@ -305,6 +307,7 @@ nav {
         flex-direction: row;
         height: ~"calc(100vh - 20px)";
         max-width: unset;
+        margin: auto;
 
         .art {
             width: @height;
