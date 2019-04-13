@@ -57,6 +57,7 @@ var dacierno = dacierno || {
                     $img = $($($container.children()[0]).children()[index]).find('img'),
                     src = $img.data('background') || $img.attr('src') || dacierno.background.default,
                     pos = $img.data('position') || '0% 100%';
+                dacierno.background.default = src;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~dacierno.background.actives.indexOf(src)) {
                     dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
                     dacierno.background.actives[index] = src;
