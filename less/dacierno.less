@@ -352,3 +352,45 @@ nav {
         }
     }
 }
+
+@media(max-width: 320px) {
+    nav {
+        .head {
+            .toggle {
+                span {
+                    left: 7px;
+                    border-top-right-radius: unset;
+                    border-bottom-left-radius: unset;
+                    transform: rotate(90deg);
+                    
+                    &::before {
+                        left: 7px;
+                        top: -17px;
+                        height: 13px;
+                        background-color: rgba(0, 0, 0, 0);
+                        border-bottom: solid 3px @white;
+                        border-right: solid 3px @white;
+                        border-bottom-right-radius: 50% 100%;
+                        border-bottom-left-radius: unset;
+                        border-top-right-radius: unset;
+                        border-top-left-radius: unset;
+                        transform: rotate(-90deg);
+                    }
+                    &::after {
+                        left: -6px;
+                        bottom: 7px;
+                        height: 13px;
+                        background-color: rgba(0, 0, 0, 0);
+                        border-bottom: solid 3px @white;
+                        border-left: solid 3px white;
+                        border-bottom-right-radius: unset;
+                        border-bottom-left-radius: 50% 100%;
+                        border-top-right-radius: unset;
+                        border-top-left-radius: unset;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}
