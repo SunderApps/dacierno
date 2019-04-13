@@ -47,7 +47,8 @@ var dacierno = dacierno || {
     },
 
     background: {
-        default: 'https://i.imgur.com/7edvN0R.jpg',
+        lastSrc: 'https://i.imgur.com/7edvN0R.jpg',
+        lastPos: '0% 100%',
         elements: [],
         actives: [],
         update: function () {
@@ -55,9 +56,10 @@ var dacierno = dacierno || {
             if ($container) {
                 var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
                     $img = $($($container.children()[0]).children()[index]).find('img'),
-                    src = $img.data('background') || $img.attr('src') || dacierno.background.default,
-                    pos = $img.data('position') || '0% 100%';
-                dacierno.background.default = src;
+                    src = $img.data('background') || $img.attr('src') || dacierno.background.lastSrc,
+                    pos = $img.data('position') || dacierno.background.lastPos;
+                dacierno.background.lastSrc = src;
+                dacierno.background.lastPos = pos;
                 if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~dacierno.background.actives.indexOf(src)) {
                     dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
                     dacierno.background.actives[index] = src;
