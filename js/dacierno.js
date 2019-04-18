@@ -46,56 +46,16 @@ var dacierno = dacierno || {
         $('.container.open:not(.hide)').off('scroll').on('scroll', dacierno.background.update).scroll();
     },
 
-    background: {
-        lastSrc: 'https://i.imgur.com/7edvN0R.jpg',
-        lastPos: '0% 100%',
-        elements: [],
-        actives: [],
-        update: function () {
-            var $container = $('.container.open:not(.hide)');
-            if ($container) {
-                var index = Math.floor(Math.max($container.scrollTop() + ($(window).height() / 3), 0) / $(window).height()),
-                    $img = $($($container.children()[0]).children()[index]).find('img'),
-                    src = $img.data('background') || $img.attr('src') || dacierno.background.lastSrc,
-                    pos = $img.data('position') || dacierno.background.lastPos;
-                dacierno.background.lastSrc = src;
-                dacierno.background.lastPos = pos;
-                if ($('body').css('backgroundImage') !== 'url(' + src + ')' && !~dacierno.background.actives.indexOf(src)) {
-                    dacierno.background.elements[index] = dacierno.background.elements[index] || $('<div></div>').addClass('background');    
-                    dacierno.background.actives[index] = src;
-                    $('body').append(dacierno.background.elements[index]);
-                    dacierno.background.elements[index].css({
-                        backgroundImage: 'url(' + src + ')',
-                        backgroundPosition: pos
-                    }).animate({
-                        opacity: 1
-                    }, 500, function () {
-                        $('body').css({
-                            backgroundImage: 'url(' + src + ')',
-                            backgroundPosition: pos
-                        });
-                        dacierno.background.elements[index].remove();
-                        dacierno.background.elements[index] = null;
-                        dacierno.background.actives[index] = null;
-                    });
-                }
-            }
-        },
-        
-        init: function () {
-
-        }
-    },
-
     events: function () {
-        $under.$erver.on('$-open-page', dacierno.openPage);
+        
     },
 
     init: function () {
         $under.history.title = 'D\'Acierno';
         $under.progress.color = '#f65b0b';
+        $under.background.lastSrc = 'https://i.imgur.com/7edvN0R.jpg';
+        $under.background.lastPos = '0% 100%';
         dacierno.events();
-        dacierno.background.init();
         dacierno.player.init();
     }
 };
