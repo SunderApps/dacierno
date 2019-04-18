@@ -42,10 +42,6 @@ var dacierno = dacierno || {
         }
     },
 
-    openPage: function () {
-        $('.container.open:not(.hide)').off('scroll').on('scroll', dacierno.background.update).scroll();
-    },
-
     events: function () {
         
     },
