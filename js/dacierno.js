@@ -51,6 +51,7 @@ var dacierno = dacierno || {
         $under.progress.color = '#f65b0b';
         $under.background.lastSrc = 'https://i.imgur.com/7edvN0R.jpg';
         $under.background.lastPos = '0% 100%';
+        $under.background.init();
         dacierno.events();
         dacierno.player.init();
     }
